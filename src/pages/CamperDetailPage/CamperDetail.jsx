@@ -10,7 +10,7 @@ import Loader from "../../components/Loader/Loader";
 import BookForm from "../../components/BookForm/BookForm";
 import location from "../../images/vector/Vector.svg";
 import water from "../../images/vector/ion_water-outline.svg";
-import coffe from "../../images/vector/coffee.svg";
+import coffee from "../../images/vector/coffee.svg";
 import gas from "../../images/vector/hugeicons_gas-stove.svg";
 import microwave from "../../images/vector/lucide_microwave.svg";
 import shower from "../../images/vector/shower.svg";
@@ -25,7 +25,7 @@ function CamperDetail() {
   const categoriesicons = {
     TV: tv,
     Water: water,
-    Kitchen: coffe,
+    Kitchen: coffee,
     Gas: gas,
     Microwave: microwave,
     Bathroom: shower,
