@@ -1,0 +1,381 @@
+.detailPage {
+  min-height: 100vh;
+  background-color: #ffffff;
+}
+
+.mainContent {
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.topSection {
+  background: white;
+  padding: 3rem;
+}
+
+.bottomSection {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  align-items: start;
+  padding: 2rem;
+}
+
+.leftBottom {
+  background: white;
+  border-radius: 12px;
+  padding: 2rem;
+}
+
+.rightBottom {
+  background: white;
+  border-radius: 12px;
+  padding: 3rem;
+  border: 1px solid #dadde1;
+  height: fit-content;
+  position: sticky;
+}
+
+.camperInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.titleSection {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.camperName {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #101828;
+  margin: 0;
+}
+
+.ratingLocation {
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+}
+
+.rating {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.stars {
+  display: flex;
+  gap: 2px;
+}
+
+.star {
+  color: #ffd700;
+  font-size: 1.2rem;
+}
+
+.starHalf {
+  color: #ffd700;
+  font-size: 1.2rem;
+  opacity: 0.6;
+}
+
+.starEmpty {
+  color: #ddd;
+  font-size: 1.2rem;
+}
+
+.ratingText {
+  font-size: 1rem;
+  color: #666;
+  font-weight: 500;
+}
+
+.location {
+  font-size: 1rem;
+  color: #666;
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.price {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #101828;
+}
+
+.imageGallery {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+}
+
+.galleryImage {
+  aspect-ratio: 1;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.galleryImage img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.galleryImage:hover {
+  transform: scale(1.02);
+}
+
+.galleryImage:hover img {
+  transform: scale(1.05);
+}
+
+.description {
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.6;
+  color: #475467;
+}
+
+.tabs {
+  display: flex;
+  border-bottom: 1px solid #e5e7eb;
+  margin: 2rem 0 0 0;
+  position: relative;
+}
+
+.tab {
+  background: none;
+  border: none;
+  padding: 1rem 2rem;
+  font-size: 1.25rem;
+  font-weight: 500;
+  color: #101828;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  position: relative;
+}
+
+.tab:hover {
+  background-color: #ffffff;
+}
+
+.tab::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0%;
+  height: 3px;
+  background-color: #ff6b6b;
+  transition: width 0.3s ease;
+}
+
+.tab.active::after {
+  width: 100%;
+}
+
+.tabContent {
+  min-height: 200px;
+  padding: 2rem 0;
+  border-bottom: 1px solid #e5e7eb;
+  margin-bottom: 2rem;
+}
+
+.featuresGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 1rem;
+}
+
+.featureItem {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  padding: 0.75rem;
+  background: #f2f4f7;
+  border-radius: 100px;
+}
+
+.featureIcon {
+  width: 20px;
+  height: 20px;
+}
+
+.featureName {
+  font-weight: 500;
+  color: #101828;
+}
+
+.reviewsList {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.reviewItem {
+  padding: 1.5rem;
+  background: #f8f9fa;
+  border-radius: 8px;
+  border-left: 4px solid #ff6b6b;
+}
+
+.reviewHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.5rem;
+}
+
+.reviewerName {
+  font-weight: 600;
+  color: #101828;
+}
+
+.reviewRating {
+  display: flex;
+  gap: 2px;
+}
+
+.reviewComment {
+  color: #666;
+  line-height: 1.5;
+  margin: 0;
+}
+
+.vehicleDetails {
+  margin-top: 3rem;
+  padding-top: 2rem;
+  border-top: 1px solid #e5e7eb;
+}
+
+.vehicleDetails h3 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #101828;
+  margin: 0 0 1rem 0;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.detailsGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0;
+}
+
+.detailItem {
+  display: flex;
+  flex-direction: column;
+  padding: 1rem 0;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.detailItem:last-child {
+  border-bottom: none;
+}
+
+.detailLabel {
+  font-weight: 500;
+  color: #666;
+  margin-bottom: 0.25rem;
+  font-size: 0.9rem;
+}
+
+.detailValue {
+  font-weight: 600;
+  color: #101828;
+  font-size: 1rem;
+}
+
+.errorContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 400px;
+  text-align: center;
+  gap: 1rem;
+}
+
+.errorContainer h2 {
+  color: #ff6b6b;
+  margin: 0;
+}
+
+.errorContainer p {
+  color: #666;
+  margin: 0;
+}
+
+/* Modal Styles */
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.8);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.modal {
+  position: relative;
+  max-width: 90vw;
+  max-height: 90vh;
+  outline: none;
+}
+
+.modalContent {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  max-width: 100%;
+  max-height: 100%;
+}
+
+.modalImage {
+  max-width: 100%;
+  max-height: 90vh;
+  object-fit: contain;
+  border-radius: 8px;
+}
+
+.closeButton {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  z-index: 1001;
+  transition: all 0.2s ease;
+  padding: 8px;
+}
+
+.closeButton:hover {
+  color: #ff6b6b;
+  transform: scale(1.1);
+}
+
+.closeButton:active {
+  transform: scale(0.9);
+}

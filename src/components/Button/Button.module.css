@@ -10,3 +10,19 @@
   background-color: #f7f7f7;
   border-color: #d84343;
 }
+
+.filterbutton {
+  color: #ffffff;
+}
+
+.showMoreCard {
+  color: #ffffff;
+  padding: 16px 60px;
+  align-self: self-start;
+}
+
+.bookingButton {
+  padding: 16px 60px;
+  align-self: center;
+  color: #ffffff;
+}

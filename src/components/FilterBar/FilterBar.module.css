@@ -1,0 +1,75 @@
+.filterBar {
+  background: #ffffff;
+  margin-top: 40px;
+}
+
+.filterTitle {
+  font-size: 1rem;
+  font-weight: 500;
+  color: #475467;
+  margin: 0 0 2rem 0;
+}
+
+.filterSection {
+  margin-bottom: 2rem;
+}
+
+.sectionTitle {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #101828;
+  margin: 0 0 2rem 0;
+}
+
+.filterOptions {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.filterOption {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem 2.5rem;
+  border: 1px solid #dadde1;
+  border-radius: 12px;
+  background: white;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  text-align: left;
+  max-width: 112px;
+}
+
+.filterOption:hover {
+  border-color: #ff6b6b;
+  background: #fff5f5;
+}
+
+.filterOption.selected {
+  border-color: #e44848;
+}
+
+.optionIcon {
+  font-size: 2rem;
+  text-align: center;
+}
+
+.optionText {
+  font-size: 1rem;
+  font-weight: 500;
+  color: #101828;
+  text-align: center;
+}
+
+.searchButtonContainer {
+  margin-top: 2rem;
+}
+
+.iconImage {
+  width: 2rem;
+  height: 2rem;
+}
+

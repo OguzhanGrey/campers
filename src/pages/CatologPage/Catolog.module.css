@@ -1,0 +1,48 @@
+.catalogPage {
+  min-height: 100vh;
+  background-color: #ffffff;
+}
+
+.mainContent {
+  display: flex;
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 2rem;
+  gap: 2rem;
+}
+
+.leftSidebar {
+  width: 360px;
+  flex-shrink: 0;
+}
+
+.rightContent {
+  flex: 1;
+}
+
+.vehicleGrid {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.loadMoreContainer {
+  display: flex;
+  justify-content: center;
+  margin-top: 2rem;
+}
+
+.errorContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 400px;
+}
+
+.errorText {
+  font-size: 1.2rem;
+  color: #ff6b6b;
+  font-weight: 500;
+  text-align: center;
+}

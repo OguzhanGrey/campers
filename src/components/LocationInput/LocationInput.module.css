@@ -1,0 +1,44 @@
+.locationInputContainer {
+  margin-bottom: 2rem;
+}
+
+.label {
+  display: block;
+  font-size: 1rem;
+  font-weight: 400;
+  color: #6c717b;
+  margin-bottom: 0.5rem;
+}
+
+.inputWrapper {
+  position: relative;
+}
+
+.input {
+  width: 100%;
+  color: #101828;
+  padding: 18px 18px 18px 48px;
+  border: none;
+  border-radius: 12px;
+  font-size: 1rem;
+  background: #f7f7f7;
+  background-image: url("../../images/vector/Vector.svg");
+  background-repeat: no-repeat;
+  background-position: 16px center;
+  background-size: 20px 20px;
+}
+
+.input:focus {
+  outline: none;
+}
+
+.input::placeholder {
+  color: #999;
+}
+
+.errorMessage {
+  color: #ff6b6b;
+  font-size: 0.8rem;
+  margin-top: 0.25rem;
+  font-weight: 500;
+}
