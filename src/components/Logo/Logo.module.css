@@ -1,0 +1,9 @@
+.logoLink {
+  display: flex;
+  position: relative;
+}
+
+.logo {
+  width: 136px;
+  height: 16px;
+}

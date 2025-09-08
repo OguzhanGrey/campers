@@ -1,0 +1,28 @@
+.hero {
+  background-image: url("../../images/bg/Picture.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.heroContent {
+  text-align: start;
+  color: #f7f7f7;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+  padding-left: 4rem;
+}
+
+.heroContent h1 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+.heroContent p {
+  color: inherit;
+  font-size: 1.5rem;
+  margin-bottom: 2rem;
+}

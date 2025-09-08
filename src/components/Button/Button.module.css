@@ -1,0 +1,12 @@
+.secondary {
+  background-color: #f7f7f7;
+  color: #101828;
+  border: 1px solid #dadde1;
+  transition: border-color 0.25s;
+  padding: 16px 32px;
+}
+
+.secondary:hover {
+  background-color: #f7f7f7;
+  border-color: #d84343;
+}
