@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import styles from "./VehicleCard.module.css";
 import location from "../../images/vector/Vector.svg";
 import star from "../../images/vector/star.svg";
@@ -13,6 +14,7 @@ import petrol from "../../images/vector/fuel-pump.svg";
 
 function VehicleCard({ vehicle }) {
   const [isLiked, setIsLiked] = useState(false);
+  const navigate = useNavigate();
   const renderStars = (rating) => {
     const stars = [];
     const fullStars = Math.floor(rating);
@@ -115,7 +117,7 @@ function VehicleCard({ vehicle }) {
           <Button 
             text="Show More" 
             className="showMoreCard" 
-            onClick={() => window.location.href = `/camper/${vehicle.id}`}
+            onClick={() => navigate(`/camper/${vehicle.id}`)}
           />
         </div>
       </div>
