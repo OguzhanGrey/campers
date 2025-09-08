@@ -1,7 +1,7 @@
 import { useState } from "react";
 import styles from "./VehicleCard.module.css";
 import location from "../../images/vector/Vector.svg";
-import star from "../../images/vector/Star.svg";
+import star from "../../images/vector/star.svg";
 import starEmpty from "../../images/vector/emptystar.svg";
 import emptyheart from "../../images/vector/emptyheart.svg";
 import likedheart from "../../images/vector/likedHearth.svg";
