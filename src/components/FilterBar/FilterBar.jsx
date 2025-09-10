@@ -1,4 +1,4 @@
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { Formik, Form, Field } from "formik";
 import * as Yup from "yup";
 import styles from "./FilterBar.module.css";
@@ -16,11 +16,12 @@ import { filterCampers } from "../../redux/slices/campersSlice";
 
 const filterSchema = Yup.object().shape({
   equipment: Yup.object(),
-  vehicleType: Yup.object()
+  vehicleType: Yup.object(),
 });
 
 function FilterBar() {
   const dispatch = useDispatch();
+  const location = useSelector((state) => state.filters.location);
 
   const equipmentIcons = {
     AC: AC,
@@ -48,13 +49,16 @@ function FilterBar() {
       Van: false,
       FullyIntegrated: false,
       Alcove: false,
-    }
+    },
   };
 
   const handleFilterSubmit = (values) => {
-    console.log("Search clicked with:", values);
+    const filterData = {
+      ...values,
+      location: location,
+    };
     dispatch(setFilters(values));
-    dispatch(filterCampers(values));
+    dispatch(filterCampers(filterData));
   };
 
   return (
@@ -71,52 +75,62 @@ function FilterBar() {
             <div className={styles.filterSection}>
               <h4 className={styles.sectionTitle}>Vehicle equipment</h4>
               <div className={styles.filterOptions}>
-                {Object.entries(values.equipment).map(([equipmentName, isSelected]) => (
-                  <button
-                    key={equipmentName}
-                    type="button"
-                    className={`${styles.filterOption} ${
-                      isSelected ? styles.selected : ""
-                    }`}
-                    onClick={() => setFieldValue(`equipment.${equipmentName}`, !isSelected)}
-                  >
-                    <span className={styles.optionIcon}>
-                      <img
-                        src={equipmentIcons[equipmentName]}
-                        alt={`${equipmentName} icon`}
-                        className={styles.iconImage}
-                      />
-                    </span>
-                    <span className={styles.optionText}>{equipmentName}</span>
-                  </button>
-                ))}
+                {Object.entries(values.equipment).map(
+                  ([equipmentName, isSelected]) => (
+                    <button
+                      key={equipmentName}
+                      type="button"
+                      className={`${styles.filterOption} ${
+                        isSelected ? styles.selected : ""
+                      }`}
+                      onClick={() =>
+                        setFieldValue(`equipment.${equipmentName}`, !isSelected)
+                      }
+                    >
+                      <span className={styles.optionIcon}>
+                        <img
+                          src={equipmentIcons[equipmentName]}
+                          alt={`${equipmentName} icon`}
+                          className={styles.iconImage}
+                        />
+                      </span>
+                      <span className={styles.optionText}>{equipmentName}</span>
+                    </button>
+                  )
+                )}
               </div>
             </div>
 
             <div className={styles.filterSection}>
               <h4 className={styles.sectionTitle}>Vehicle type</h4>
               <div className={styles.filterOptions}>
-                {Object.entries(values.vehicleType).map(([typeName, isSelected]) => (
-                  <button
-                    key={typeName}
-                    type="button"
-                    className={`${styles.filterOption} ${
-                      isSelected ? styles.selected : ""
-                    }`}
-                    onClick={() => setFieldValue(`vehicleType.${typeName}`, !isSelected)}
-                  >
-                    <span className={styles.optionIcon}>
-                      <img
-                        src={vehicleTypeIcons[typeName]}
-                        alt={`${typeName} icon`}
-                        className={styles.iconImage}
-                      />
-                    </span>
-                    <span className={styles.optionText}>
-                      {typeName === "FullyIntegrated" ? "Fully Integrated" : typeName}
-                    </span>
-                  </button>
-                ))}
+                {Object.entries(values.vehicleType).map(
+                  ([typeName, isSelected]) => (
+                    <button
+                      key={typeName}
+                      type="button"
+                      className={`${styles.filterOption} ${
+                        isSelected ? styles.selected : ""
+                      }`}
+                      onClick={() =>
+                        setFieldValue(`vehicleType.${typeName}`, !isSelected)
+                      }
+                    >
+                      <span className={styles.optionIcon}>
+                        <img
+                          src={vehicleTypeIcons[typeName]}
+                          alt={`${typeName} icon`}
+                          className={styles.iconImage}
+                        />
+                      </span>
+                      <span className={styles.optionText}>
+                        {typeName === "FullyIntegrated"
+                          ? "Fully Integrated"
+                          : typeName}
+                      </span>
+                    </button>
+                  )
+                )}
               </div>
             </div>
 
@@ -131,4 +145,3 @@ function FilterBar() {
 }
 
 export default FilterBar;
-

@@ -35,9 +35,6 @@ const campersSlice = createSlice({
     filterCampers: (state, action) => {
       const { location, equipment, vehicleType } = action.payload;
 
-      console.log("Filtering with:", { location, equipment, vehicleType });
-      console.log("Total items before filter:", state.items.length);
-
       state.filteredItems = state.items.filter((camper) => {
         if (
           location &&

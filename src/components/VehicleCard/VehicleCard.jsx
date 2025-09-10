@@ -1,5 +1,6 @@
-import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { useSelector, useDispatch } from "react-redux";
+import { toggleFavorite } from "../../redux/slices/favoritesSlice";
 import styles from "./VehicleCard.module.css";
 import location from "../../images/vector/Vector.svg";
 import star from "../../images/vector/star.svg";
@@ -13,8 +14,10 @@ import auto from "../../images/vector/automatic.svg";
 import petrol from "../../images/vector/fuel-pump.svg";
 
 function VehicleCard({ vehicle }) {
-  const [isLiked, setIsLiked] = useState(false);
+  const dispatch = useDispatch();
   const navigate = useNavigate();
+  const favoriteIds = useSelector((state) => state.favorites.favoriteIds);
+  const isLiked = favoriteIds.includes(vehicle.id);
   const renderStars = (rating) => {
     const stars = [];
     const fullStars = Math.floor(rating);
@@ -71,12 +74,14 @@ function VehicleCard({ vehicle }) {
             <h3 className={styles.vehicleName}>{vehicle.name}</h3>
             <div className={styles.priceContainer}>
               <span className={styles.price}>{vehicle.price}</span>
-            <button 
-              className={`${styles.favoriteBtn} ${isLiked ? styles.liked : ''}`}
-              onClick={() => setIsLiked(!isLiked)}
-            >
-              <img src={isLiked ? likedheart : emptyheart} alt="like" />
-            </button>
+              <button
+                className={`${styles.favoriteBtn} ${
+                  isLiked ? styles.liked : ""
+                }`}
+                onClick={() => dispatch(toggleFavorite(vehicle.id))}
+              >
+                <img src={isLiked ? likedheart : emptyheart} alt="like" />
+              </button>
             </div>
           </div>
 
@@ -114,9 +119,9 @@ function VehicleCard({ vehicle }) {
         </div>
 
         <div className={styles.cardBottom}>
-          <Button 
-            text="Show More" 
-            className="showMoreCard" 
+          <Button
+            text="Show More"
+            className="showMoreCard"
             onClick={() => navigate(`/camper/${vehicle.id}`)}
           />
         </div>
